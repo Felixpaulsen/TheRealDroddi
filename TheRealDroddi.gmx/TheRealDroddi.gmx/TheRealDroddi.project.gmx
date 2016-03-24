@@ -10,6 +10,7 @@
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_pistol</sprite>
     <sprite>sprites\spr_shuriken</sprite>
+    <sprite>sprites\spr_cursor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -18,7 +19,7 @@
     <object>objects\obj_grass</object>
     <object>objects\obj_pistol</object>
     <object>objects\obj_shuriken</object>
-    <object>objects\obj_reloading</object>
+    <object>objects\obj_controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
