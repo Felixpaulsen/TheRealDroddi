@@ -30,6 +30,9 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 7;
 movespeed = 4;
+
+image_speed=0
+image_index=0
 </string>
           </argument>
         </arguments>
@@ -63,10 +66,42 @@ gravity=0
 gravity_direction = 270
 }
 //the arrow keys&lt;,&gt;,^
-if place_free(x-4,y)and keyboard_check(vk_left){x-=4}
-if place_free(x+4,y)and keyboard_check(vk_right){x+=4}
+if place_free(x-4,y)and keyboard_check(ord('A')){x-=4}
+if place_free(x+4,y)and keyboard_check(ord('D')){x+=4}
 if !place_free(x,y+1)
-and keyboard_check(vk_up){vspeed=-10}
+and keyboard_check(vk_space){vspeed=-10}
+
+if x&lt;mouse_x 
+{
+image_index=0
+}
+else
+{
+image_index=1
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>move_contact_solid(direction,12);vspeed=0;
 </string>
           </argument>
         </arguments>
