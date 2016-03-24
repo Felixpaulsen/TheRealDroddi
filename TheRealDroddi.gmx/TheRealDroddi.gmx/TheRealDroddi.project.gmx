@@ -17,7 +17,7 @@
     <object>objects\obj_grass</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\am_arena</room>
+    <room>rooms\rm_arena</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
