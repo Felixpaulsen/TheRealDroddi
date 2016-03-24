@@ -18,6 +18,7 @@
     <object>objects\obj_grass</object>
     <object>objects\obj_pistol</object>
     <object>objects\obj_shuriken</object>
+    <object>objects\obj_reloading</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
