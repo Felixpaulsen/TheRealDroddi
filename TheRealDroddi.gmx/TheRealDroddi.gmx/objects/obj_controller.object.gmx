@@ -53,6 +53,8 @@ cursor_sprite = spr_cursor;
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_sprite(spr_ammobar,obj_droddi.ammo,room_width-64,room_height-128);
+draw_set_color(c_dkgray);
+draw_text(room_width-64+16,room_height-128+48,obj_droddi.ammo);
 </string>
           </argument>
         </arguments>
@@ -78,11 +80,9 @@ if obj_droddi.shoottimer&lt;3*room_speed
 {
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-    draw_set_color(c_gray);
-    draw_set_alpha(0.5);
-    var a = 3*room_speed-obj_droddi.shoottimer;
-    draw_rectangle(room_width-64,room_height-128+96,room_width-64+32,room_height-a-32,false);
-    draw_set_alpha(1);
+    draw_set_color(c_white);
+    var a = 1.5*(obj_droddi.maxshoottimer-obj_droddi.shoottimer);
+    draw_rectangle(room_width-64-16,room_height-48,room_width-64-14,room_height-48-a,false);
 }
 </string>
           </argument>

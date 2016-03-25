@@ -31,7 +31,8 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 15;
 movespeed = 14;
-shoottimer = room_speed*3;
+shoottimer = room_speed*1.5;
+maxshoottimer = shoottimer;
 ammo = 10;
 
 image_speed=0
@@ -137,7 +138,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Increase shoottimer
-if shoottimer &lt; 3*room_speed
+if shoottimer &lt; maxshoottimer
 {
     shoottimer++;
 }
@@ -215,7 +216,7 @@ with(other){instance_destroy()}
             <kind>1</kind>
             <string>///Shoot
 
-if shoottimer == room_speed*3 &amp;&amp; ammo&gt;0 //Checks if shoottimer is max.
+if shoottimer == maxshoottimer &amp;&amp; ammo&gt;0 //Checks if shoottimer is max.
 {
     shoottimer = 0; //Sets shoottimer to min.
     a = instance_create(x,y,obj_shuriken);
