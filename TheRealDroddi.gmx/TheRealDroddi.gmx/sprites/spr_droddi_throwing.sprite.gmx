@@ -20,7 +20,8 @@
   <width>64</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\sprite5_0.png</frame>
-    <frame index="1">images\sprite5_1.png</frame>
+    <frame index="0">images\spr_droddi_throwing_0.png</frame>
+    <frame index="1">images\spr_droddi_throwing_1.png</frame>
+    <frame index="2">images\spr_droddi_throwing_2.png</frame>
   </frames>
 </sprite>

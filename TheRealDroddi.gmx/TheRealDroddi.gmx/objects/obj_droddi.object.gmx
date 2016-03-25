@@ -35,8 +35,8 @@ shoottimer = room_speed*1.5;
 maxshoottimer = shoottimer;
 ammo = 10;
 
-image_speed=0
-image_index=0
+image_speed=0.5;
+image_index=0;
 </string>
           </argument>
         </arguments>
@@ -87,35 +87,6 @@ if place_free(x+movespeed,y) &amp;&amp; keyboard_check(ord('D'))
 if !place_free(x,y+1) &amp;&amp; keyboard_check(vk_space)
 {
     vspeed=-jumpspeed
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Handle images
-if x&lt;mouse_x 
-{
-    image_index=0;
-}
-else
-{
-    image_index=1;
 }
 </string>
           </argument>
@@ -223,6 +194,33 @@ if shoottimer == maxshoottimer &amp;&amp; ammo&gt;0 //Checks if shoottimer is ma
     a.speed = 30;
     a.direction = point_direction(x,y,mouse_x,mouse_y);
     ammo--;
+    sprite_index=spr_droddi_throwing;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if sprite_index=spr_droddi_throwing
+{
+    sprite_index=spr_droddi;
 }
 </string>
           </argument>
