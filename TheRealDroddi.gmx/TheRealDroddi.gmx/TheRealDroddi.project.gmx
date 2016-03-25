@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_droddi</sprite>
+    <sprite>sprites\sprite5</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_shuriken</sprite>
     <sprite>sprites\spr_cursor</sprite>
