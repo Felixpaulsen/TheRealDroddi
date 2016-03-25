@@ -32,6 +32,7 @@ vsp = 0;
 jumpspeed = 15;
 movespeed = 14;
 shoottimer = room_speed*3;
+ammo = 10;
 
 image_speed=0
 image_index=0
@@ -187,12 +188,13 @@ if shoottimer &lt; 3*room_speed
             <kind>1</kind>
             <string>///Shoot
 
-if shoottimer == room_speed*3 //Checks if shoottimer is max.
+if shoottimer == room_speed*3 &amp;&amp; ammo&gt;0 //Checks if shoottimer is max.
 {
     shoottimer = 0; //Sets shoottimer to min.
     a = instance_create(x,y,obj_shuriken);
     a.speed = 30;
     a.direction = point_direction(x,y,mouse_x,mouse_y);
+    ammo--;
 }
 </string>
           </argument>
