@@ -32,7 +32,7 @@ cursor_sprite = spr_cursor;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,9 +52,9 @@ cursor_sprite = spr_cursor;
             <string>///Draw ammo
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_sprite(spr_ammobar,obj_droddi.ammo,room_width-64,room_height-128);
+draw_sprite(spr_ammobar,obj_droddi.ammo,1024-64,768-128);
 draw_set_color(c_dkgray);
-draw_text(room_width-64+16,room_height-128+48,obj_droddi.ammo);
+draw_text(1024-64+16,768-128+48,obj_droddi.ammo);
 </string>
           </argument>
         </arguments>
@@ -82,7 +82,7 @@ if obj_droddi.shoottimer&lt;3*room_speed
     draw_set_valign(fa_top);
     draw_set_color(c_white);
     var a = 1.5*(obj_droddi.maxshoottimer-obj_droddi.shoottimer);
-    draw_rectangle(room_width-64-16,room_height-48,room_width-64-14,room_height-48-a,false);
+    draw_rectangle(1024-64-16,768-48,1024-64-14,768-48-a,false);
 }
 </string>
           </argument>

@@ -29,7 +29,7 @@
 grav = 1;
 hsp = 0;
 vsp = 0;
-jumpspeed = 15;
+jumpspeed = 20;
 movespeed = 14;
 shoottimer = room_speed*1.5;
 maxshoottimer = shoottimer;
