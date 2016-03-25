@@ -147,6 +147,54 @@ if mouse_x&gt;x &amp;&amp; image_xscale!=1
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Grapple code
+grapplespd = 15; //Speed towards grapple
+
+//Code for moving towards grapple
+if instance_number(obj_rope) == 1
+if obj_rope.alarm[0]&lt;1{
+gravity = 0
+pd = point_direction(x,y,obj_rope.x,obj_rope.y)
+
+//Movement towards grapple
+repeat(grapplespd){
+if place_free(x+lengthdir_x(1,pd),y)
+x+=lengthdir_x(1,pd)
+if place_free(x,y+lengthdir_y(1,pd))
+y+=lengthdir_y(1,pd)
+}
+
+//Movement downwards, in case you want gravity to play a role while grappling
+//Set i 1 higher or lover for more or less gravity
+if place_free(x+lengthdir_x(1,270),y)
+x+=lengthdir_x(1,270)
+if place_free(x,y+lengthdir_y(1,270))
+y+=lengthdir_y(1,270)
+
+//Necessary for smooth movement
+speed-=.2
+if speed&lt;0 speed=0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_shuriken">
       <action>
@@ -192,7 +240,33 @@ with(other){instance_destroy()}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>move_contact_solid(direction,12);vspeed=0;
+            <string>//move_contact_solid(direction,12);vspeed=0;
+move_contact_solid(270,speed)
+speed=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy rope
+with obj_rope instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -225,6 +299,38 @@ if shoottimer == maxshoottimer &amp;&amp; ammo&gt;0 //Checks if shoottimer is ma
     a.direction = point_direction(x,y,mouse_x,mouse_y);
     ammo--;
     sprite_index=spr_droddi_throwing;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Grapple stuff
+//Destroy existing grapples
+with obj_rope{
+instance_destroy()}
+
+//Create a new grapple and move it to contact solid in the direction you're aiming
+aim = point_direction(x,y,mouse_x,mouse_y)
+bullet = instance_create(x+lengthdir_x(13,aim),y+lengthdir_y(13,aim),obj_rope)
+bullet.aim = aim
+with bullet{
+move_contact_solid(obj_droddi.aim,-1)
 }
 </string>
           </argument>

@@ -12,6 +12,8 @@
     <sprite>sprites\spr_shuriken</sprite>
     <sprite>sprites\spr_cursor</sprite>
     <sprite>sprites\spr_ammobar</sprite>
+    <sprite>sprites\spr_pixel</sprite>
+    <sprite>sprites\spr_rope</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -20,6 +22,7 @@
     <object>objects\obj_grass</object>
     <object>objects\obj_shuriken</object>
     <object>objects\obj_controller</object>
+    <object>objects\obj_rope</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
