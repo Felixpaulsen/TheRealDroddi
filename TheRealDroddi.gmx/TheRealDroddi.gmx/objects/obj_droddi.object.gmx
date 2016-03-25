@@ -134,12 +134,12 @@ if shoottimer &lt; maxshoottimer
           <argument>
             <kind>1</kind>
             <string>///Handle images
-if keyboard_check(ord('A')) &amp;&amp; image_xscale!=-1
+if mouse_x&lt;=x &amp;&amp; image_xscale!=-1
 {
     image_xscale=-1*image_xscale;
 }
 else
-if keyboard_check(ord('D')) &amp;&amp; image_xscale!=1
+if mouse_x&gt;x &amp;&amp; image_xscale!=1
 {
     image_xscale=-1*image_xscale;
 }
