@@ -10,6 +10,7 @@
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_shuriken</sprite>
     <sprite>sprites\spr_cursor</sprite>
+    <sprite>sprites\spr_ammobar</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
